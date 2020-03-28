@@ -68,7 +68,7 @@ public class Algorithms {
 		return examScores;
 	}
 
-	public List<String> sortDNA(List<String> unsortedSequences) {
+	public static List<String> sortDNA(List<String> unsortedSequences) {
 		for (int i = 0; i < unsortedSequences.size(); i++) {
 			int shortestLength = 9999999;
 			int shortestLengthIndex = 0;
@@ -84,7 +84,7 @@ public class Algorithms {
 		return unsortedSequences;
 	}
 	
-	public List<String> testSortStringContents(List<String> words) {	
+	public static List<String> sortWords(List<String> words) {	
 		for(int i = 0; i < words.size() - 1; i++) {
 			for(int j = i; j > 0; j--) {
 				if(words.get(j).compareTo(words.get(j-1)) < 0) {
