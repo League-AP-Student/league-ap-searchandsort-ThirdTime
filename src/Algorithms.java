@@ -51,7 +51,7 @@ public class Algorithms {
 
 	}
 
-	public static void sortScores(List<Double> examScores) {
+	public static List<Double> sortScores(List<Double> examScores) {
 		for (int repetitionNum = 0; repetitionNum < examScores.size(); repetitionNum++) {
 			double lowestNum = 9999999;
 			int lowestNumIndex = 0;
@@ -65,9 +65,10 @@ public class Algorithms {
 			examScores.set(repetitionNum, lowestNum);
 			examScores.set(lowestNumIndex, tempVal);
 		}
+		return examScores;
 	}
 
-	public void sortDNA(List<String> unsortedSequences) {
+	public List<String> sortDNA(List<String> unsortedSequences) {
 		for (int i = 0; i < unsortedSequences.size(); i++) {
 			int shortestLength = 9999999;
 			int shortestLengthIndex = 0;
@@ -80,21 +81,10 @@ public class Algorithms {
 			unsortedSequences.set(i, unsortedSequences.get(shortestLengthIndex));
 			unsortedSequences.set(shortestLengthIndex, tempVal);
 		}
+		return unsortedSequences;
 	}
 	
-	public void testSortStringContents(List<String> words) {
-		
-			for (int i = 0; i < array.length - 1; i++) {
-				for (int j = i; j > 0; j--) {
-					if (array[j] < array[j - 1]) {
-						int tempNum = array[j];
-						array[j] = array[j - 1];
-						array[j - 1] = tempNum;
-						display.updateDisplay();
-					}
-				}
-			}
-			
+	public List<String> testSortStringContents(List<String> words) {	
 		for(int i = 0; i < words.size() - 1; i++) {
 			for(int j = i; j > 0; j--) {
 				if(words.get(j).compareTo(words.get(j-1)) < 0) {
@@ -104,6 +94,7 @@ public class Algorithms {
 				}
 			}
 		}
+		return words;
 	}
 
 }
